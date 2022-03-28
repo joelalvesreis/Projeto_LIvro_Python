@@ -1,0 +1,744 @@
+# programa que lê dois valorese imprime qual é o maior
+
+a = int(input('Primeiro valor: '))
+b = int(input('Segundo valor: '))
+if a > b:
+    print('O primeiro valor é maior!')
+if a < b:
+    print('O segundo valor é maior!')
+elif (a == b):
+    print('Os dois valores são iguais')
+
+# programa carro novo ou velho , dependendo da idade
+idade = int(input('Digite a idade do seu carro: '))
+if idade <= 3:
+    print('Seu carro é novo!')
+if idade > 3:
+    print('Seu carro é velho!')
+
+# escreva um programa que pergunte a velocidade do carro de um usuario. caso ultrapasse 80km/h, exiba
+# uma mensagem dizendo que o usuario foi multado. nesse caso exiba o valor da multa, cobrando $$5 por km acima de 80 km/h
+
+velocidade = int(input('digite a velocidade: '))
+multa = velocidade * 5
+if velocidade > 80:
+    print(f'Voce foi multado em RS {multa} acima de 80 km/h')
+else:
+    print('Parabéns! Voce esta dentro do limite da via')
+
+#  Calculo de imposto de renda
+
+salario = float(input('Digite o salario para calculo do imposto: '))
+base = salario
+imposto = 0
+if base > 3000:
+    imposto = imposto + ((base - 3000) * 0.35)
+if base > 1000:
+    imposto = imposto + ((base - 100) * 0.20)
+print(f'Salario: R${salario:6.2f} Imposto a pagar: R${imposto:6.2f}')
+
+
+#   escreva um programa que pergunte o salario do funcionario e calcule o valor do aumento. Para salarios  superiores a R$1250
+# calcule um aumento de 10%. Para inferiores ou iguais, de 15%
+salario_func = int(input('Digite o valor do seu salario: '))
+if salario_func > 1250:
+    salario_com_aumento = salario_func * 0.10
+if salario_func <= 1250:
+    salario_com_aumento = salario_func * 0.15
+print(f'O seu salario foi aumentado em: R${salario_com_aumento:6.2f} ')
+
+#   escreva um programa que leia 3 numeros e que imprima o valor do maior e o menor
+""" a = int(input('Digite o valor de a! '))
+b = int(input('Digite o valor de b! '))
+c = int(input('Digite o valor de c! '))
+
+if a > b and a > c:
+    print('o Valor de a é maior!')
+if b > a and b > c:
+    print('o Valor de b é maior!')
+if c > a and c > b:
+    print('o Valor de a é maior!') """
+
+a = int(input("Digite o primeiro valor:"))
+b = int(input("Digite o segundo valor:"))
+c = int(input("Digite o terceiro valor:"))
+maior = a
+if b > a and b > c:
+    maior = b
+
+if c > a and c > b:
+    maior = c
+menor = a
+if b < c and b < a:
+    menor = b
+if c < b and c < a:
+    menor = c
+print(f"O menor número digitado foi {menor}")
+print(f"O maior número digitado foi {maior}")
+
+#   carro novo ou velho dependendo da idade com else
+idade = int(input('Digite a idade do seu carro: '))
+if idade <= 3:
+    print('Seu carro é novo!')
+
+else:
+    print('Seu carro é velho')
+
+#  escreva um programa que pergunte a distancia que um passageiro deseja percorrer em km. Calcule o preço
+#  da passagem, cobrando RS 0,50 por km para viagems de até 200 km, e R$ 0,45 para viagens mais longas
+
+distancia = int(input('Digite a distancia percorrida: '))
+
+if distancia <= 200:
+    valor_da_passagem = distancia * 0.50
+else:
+    if distancia > 200:
+        valor_da_passagem = distancia * 0.45
+
+print(f'O valor da passagem será R${valor_da_passagem:6.2f}')
+
+#outra forma de fazer 
+distancia = float(input('Digite a distancia percorrida: '))
+
+if distancia <= 200:
+    valor_da_passagem = distancia * 0.50
+else:
+    valor_da_passagem = distancia * 0.45
+
+print(f'O valor da passagem será R${valor_da_passagem:6.2f}')
+
+ESTRUTURAS ANINHADAS 
+
+#  4.5 Programa  programa de telefone com 3 faixas de preço:
+minutos = int(input('Quantos minutos voçe ligou esse mes: '))
+if minutos < 200:
+    preco = 0.20
+else:
+    if minutos < 400:
+        preco = 0.18
+    else:
+        preco = 0.25
+print(f'Você  vai pagar este mês: R${minutos * preco:6.2f}')
+
+#  4.5 Programa programa de categoria x  preço:
+
+categoria = int(input('Digite a categoria do Produto: '))
+if categoria == 1:
+    preco = 10
+else:
+    if categoria == 2:
+        preco = 18
+    else:
+        if categoria == 3:
+            preco = 23
+        else:
+            if categoria == 4:
+                preco = 26
+            else:
+                if categoria == 5:
+                    preco = 31
+                else:
+                    print('Categoria invalida! digite um valor entre 1 e 5!')
+                    preco = 0
+print(f'O preco do produto é: R${preco:6.2f}')
+
+#  4. Programa   categoria x preço usando o elif:
+
+categoria = int(input('Digite a categoria do Produto: '))
+if categoria == 1:
+    preco = 10
+elif categoria == 2:
+    preco = 18
+elif categoria == 3:
+    preco = 23
+elif categoria == 4:
+    preco = 26
+elif categoria == 5:
+    preco = 31
+else:
+    print('Categoria invalida! digite um valor entre 1 e 5!')
+    preco = 0
+print(f'O preco do produto é: R${preco:6.2f}')
+
+
+#  Exercício 04-08: Escreva um programa que leia dois números e que pergunte qual operação você deseja realizar,
+#  Você deve poder calcular soma (+), subtração (-), multiplicação (*) e divisão (/). Exiba o resultado da operação solicitada.
+
+a = float(int(input('Primeiro numero: ')))
+b = float(int(input('Segundo numero: ')))
+operacao = input('Digite a operação  a realizar (+,-,*,/):')
+if operacao == '+':
+    resultado = a + b
+elif operacao == '-':
+    resultado = a - b
+elif operacao == '*':
+    resultado = a * b
+elif operacao == '/':
+    resultado = a / b
+else:
+    print('Operação invalida!')
+    resultado = 0
+print(f'O Resultado da operação é {resultado:6.2f}')
+
+#  Exercício 04-08: Escreva um programa que leia dois números e que pergunte qual operação você deseja realizar,
+#  Você deve poder calcular soma (+), subtração (-), multiplicação (*) e divisão (/). Exiba o resultado da operação solicitada. com else aninhado
+
+a = float(int(input('Primeiro numero: ')))
+b = float(int(input('Segundo numero: ')))
+operacao = input('Digite a operação  a realizar (+,-,*,/):')
+if operacao == '+':
+    resultado = a + b
+else:
+    if operacao == '-':
+        resultado = a - b
+    else:
+        if operacao == '*':
+            resultado = a * b
+        else:
+            if operacao == '/':
+                resultado = a / b
+            else:
+                print('Operacção invalida!')
+                operacao = 0
+print(f'O resultado é: {resultado:6.2f}')
+
+
+# Escreva um programa para aprovar o empréstimo bancário para compra de uma casa.
+#  O programa deve perguntar o valor da casa a comprar, o salário e a quantidade de anos a pagar.
+#  O valor da prestação mensal não pode ser superior a 30% do salário. Calcule o valor da prestação como
+#  sendo o valor da casa a comprar dividido pelo número de meses a pagar.
+
+valor = float(int(input('Digite o valor da casa: ')))
+salario = float(int(input('Digite o salario: ')))
+anos = int(input('Quantos anos a pagar: '))
+meses = anos * 12
+prestacao = valor / meses
+if prestacao > salario * 0.3:
+    print('Infelizmente voce não pode obter o emprestimo')
+else:
+    print(f'O valor da prestacao: R${prestacao:7.2f} Emprestimo ok!')
+
+
+# Exercício 04-10: Escreva um programa que calcule o preço a pagar pelo fornecimento de energia elétrica
+# Escreva um programa que calcule o preço a pagar pelo fornecimento de energia elétrica.
+#  Pergunte a quantidade de kWh consumida e o tipo de instalação: R para residências, I para indústrias e C para comércios.
+#  Calcule o preço a pagar de acordo com a tabela a seguir.
+""" +---------------------------------------+
+|   Preço por tipo e faixa de consumo |
++---------------------------------------+
+| Tipo | Faixa(kWh) | Preço |
++= == == == == == == == == == == == == == == == == == +
+| Residencial | Até 500 | R$ 0, 40 |
+| | Acima de 500 | R$ 0, 65 |
++---------------------------------------+
+| Comercial | Até 1000 | R$ 0, 55 |
+| | Acima de 1000 | R$ 0, 60 |
++---------------------------------------+
+| Industrial | Até 5000 | R$ 0, 55 |
+| | Acima de 5000 | R$ 0, 60 |
++---------------------------------------+ """
+consumo = int(input('Consumo em KWh: '))
+tipo = input('Instalação ( R, C ou I): ')
+
+if tipo == 'R':
+    if consumo <= 500:
+        preco = 0.40
+    else:
+        preco = 0.65
+elif tipo == 'I':
+    if consumo <= 5000:
+        preco = 0.55
+    else:
+        preco = 0.60
+elif tipo == 'C':
+    if consumo <= 1000:
+        preco = 0.55
+    else:
+        preco = 0.60
+else:
+    preco = 0
+    print('Erro! Tipo de instalação desconhecido!')
+custo = consumo * preco
+print(f'valor a pagar: R${custo:7.2f}')
+
+
+
+CAPITULO 5 REPETIÇOES
+
+
+# WHILE
+pontos = 0
+questao = 1
+
+while questao <= 3:
+    resposta = input(f"resposta da questao {questao}: ")
+    if questao == 1 and resposta == 'b':
+        pontos == pontos + 1
+    if questao == 2 and resposta == 'a':
+        pontos = pontos + 1
+    if questao == 3 and resposta == 'd':
+        pontos = pontos + 1
+    questao = questao + 1
+    print(f'O aluno fez {pontos} pontos')
+
+
+
+# ACUMULADORES
+n = 1
+soma = 0
+while n <= 10:
+    x = int(input(f'Digite o {n} número: '))
+    soma = soma + x
+    n = n + 1
+    print(f'soma: {soma}')
+
+
+# INTERROMPENDO A REPETIÇÃO
+s = 0
+while True:
+    v = int(input('Digite um numero a somar ou 0 para sair: '))
+    if v == 0:
+        break
+    s += v
+    print(s)
+
+
+#Escreva um programa para controlar uma pequena máquina registradora. Você deve solicitar ao usuário que digite o código do produto e a quantidade comprada. Utilize a tabela de códigos a seguir para obter o preço de cada produto:
+
+""" Código Preço
+1      0,50
+2      1,00 
+3      4,00
+5      7,00
+9      8,00
+
+Seu programa deve exibir o total das compras depois que o usuário digitar 0.
+Qualquer outro código deve gerar a mensagem de erro “Código inválido”. """
+apagar = 0
+while True:
+    codigo = int(input('Digite o codigo da mercadoria (0 para sair): '))
+    preco = 0
+    if codigo == 0:
+        break
+    elif codigo == 1:
+        preco = 0.50
+    elif codigo == 2:
+        preco = 1.00
+    elif codigo == 3:
+        preco = 4.00
+    elif codigo == 5:
+        preco = 7.00
+    elif codigo == 9:
+        preco = 8.00
+    else:
+        print('Codigo Invalido!')
+    if preco != 0:
+        quantidade = int(input('Quantidade: '))
+        apagar = apagar + (preco * quantidade)
+print(f'Total a pagar R${apagar:8.2f}')
+
+
+# PROGRAMA DE CONTAGEM DE CELULAS
+valor = int(input('Digite o valor a pagar: '))
+cedulas = 0
+atual = 50
+apagar = valor
+while True:
+    if atual <= apagar:
+        apagar -= atual
+        cedulas += 1
+    else:
+        print(f'{cedulas} cedula(s) de R${atual}')
+        if apagar == 0:
+            break
+        if atual == 50:
+            atual = 20
+        elif atual == 20:
+            atual = 10
+        elif atual == 10:
+            atual = 5
+        elif atual == 5:
+            atual = 1
+        cedulas = 0
+
+# imprimir tabuada de multiplicação de 1 a 10:
+
+tabuada = 1
+while tabuada <= 10:
+    numero = 1
+    while numero <= 10:
+        print(f'{tabuada} x {numero} = {tabuada * numero}')
+        numero += 1
+        tabuada += 1
+
+# imprimir tabuada de multiplicação de 1 a 10: outra forma
+
+tabuada = 1
+numero = 1
+while tabuada <= 10:
+    print(f'{tabuada} x {numero} = {tabuada * numero}')
+    numero += 1
+    if numero == 11:
+        numero = 1
+        tabuada = + 1
+
+
+# 6.1 PROGRAMA - CALUCULO DE MEDIA
+
+notas = [6, 7, 5, 8, 9]
+soma = 0
+x = 0
+while x < 5:
+    soma += notas[x]
+    x += 1
+print(f'Média: {soma / x:5.2f}')
+
+
+# 6.1 PROGRAMA - CALUCULO DE MEDIA com notas digitadas
+
+notas = [0, 0, 0, 0, 0]
+soma = 0
+x = 0
+while x < 5:
+    notas[x] = float(input(f'Nota {x}: '))
+    soma += notas[x]
+    x += 1
+x = 0
+while x < 5:
+    print(f'Nota {x}: {notas[x]:6.2f}')
+    x += 1
+
+print(f'Média: {soma / x:5.2f}')
+
+
+# TRABALHANDO COM INDICES
+# PROGRAMA 6.3 - APRESENTAÇÃO DE NUMEROS
+
+
+from ast import While
+numeros = [0, 0, 0, 0, 0]
+x = 0
+while x < 5:
+    numeros[x] = int(input(f'Numero {x + 1}: '))
+    x += 1
+while True:
+    escolhido = int(input("que posição voce quer imprimir (0 para sair): "))
+    if escolhido == 0:
+        break
+    print(f'Voce escolheu o numero: {numeros[escolhido - 1]}')
+
+
+# 6.3 TAMANHO DE LISTAS
+""" 
+L = [12, 9, 5]
+print(len(L))
+ """
+# prog 6.4 - repetição com tamanho da lista
+""" l = [1, 2, 3]
+x = 0
+while x < 3:
+    print(l[x])
+    x += 1 """
+
+
+# tamanho de listas (len)
+
+""" L = [12, 9, 5]
+print(len(L))
+
+V = []
+print(len(V)) """
+
+
+# Programa 6.4 - Repetição  com tamanho fixo de lista
+
+""" L = [1, 2, 3]
+x = 0
+while x < 3:
+    print(L[x])
+    x += 1
+ """
+# Programa 6.5 - Repetição  com tamanho de lista usando o len
+""" L = [1, 2, 3]
+x = 0
+while x < len(L):
+    print(L[x])
+    x += 1
+ """
+
+
+# 6.4    ADIÇÃO DE ELEMENTOS NA LISTA
+
+L = []
+L.append('C')
+print(L)
+
+# 6.6    ADIÇÃO DE ELEMENTOS A LISTA
+
+L = []
+while True:
+    n = int(input('Digite um numero (0 sai): '))
+    if n == 0:
+        break
+    L.append(n)
+x = 0
+while x < len(L):
+    print(L[x])
+    x += 1
+
+# outra forma    ADIÇÃO DE ELEMENTOS A LISTA
+
+L = []
+L = L + [2, 3, 4, 5]
+print(L)
+
+L = ['a']
+L.append('b')
+
+L.extend(['c'])
+L.append(['d', 'e'])
+
+L.extend(['f', 'g', 'h'])
+print(L)
+
+
+L = ['a']
+L.append('b')
+
+L.extend(['c'])
+L.append(['d', 'e'])
+
+L.extend(['f', 'g', 'h'])
+
+print(L[2][1])
+ 
+
+# PROGRAMA 6.7 - SIMULAÇÃO DE UMA FILA DE BANCO
+
+ultimo = 10
+fila = list(range(1, ultimo + 1))
+while True:
+    print(f'\nExistem {len(fila)} clientes na fila')
+    print(f'Fila atual{fila}')
+    print('Digite F para adicionar  um cliente ao fim da fila,')
+    print('ou A para realizar o atendimento. S para sair.')
+    operacao = input('Operação (F, A ou S):')
+    if operacao == 'A':
+        if len(fila) > 0:
+            atendido = fila.pop(0)
+            print(f'Cliente {atendido} atendido')
+        else:
+            print('Fila vazia! Ninguem para atender.')
+    elif operacao == 'F':
+        ultimo += 1  # incrementa o ticket de novo cliente
+        fila.append(ultimo)
+    elif operacao == 'S':
+        break
+    else:
+        print('Operdação invalida" Digite apenas F, A ou S!')
+
+
+
+# Programa 6.8 Pilha de pratos
+prato = 5
+pilha = list(range(1, prato + 1))
+while True:
+    print(f'\nExistem {len(pilha)} pratos na pilha')
+    print(f'Pilha atual: {pilha}')
+    print('Digite E para empilhar um novo prato,')
+    print('ou D para desenpilhar. S para sair.')
+    operacao = input('Operação (E, D o S): ')
+    if operacao == 'D':
+        if len(pilha) > 0:
+            lavado = pilha.pop(-1)
+            print(f'prato {lavado}')
+        else:
+            print('Pilha vazia! Nada para lavar.')
+    elif operacao == 'E':
+        prato += 1  # novo prato
+        pilha.append(prato)
+    elif operacao == 'S':
+        break
+    else:
+        print('Operação invalida! Digite apenas E, D ou S!')
+
+
+# 6.9 PESQUISA SEQUENCIAL
+
+L = [15, 7, 27, 39]
+p = int(input(' Digite o Valor a procurar: '))
+achou = False
+x = 0
+while x < len(L):
+    if L[x] == p:
+        achou == True
+        break
+    x += 1
+if achou:
+    print(f'{p} achado na posição {x}')
+else:
+    print(f'{p} nao encontrado')
+
+# INSTRUÇÃO FOR
+
+""" # USANDO O FOR
+L = [8, 9, 15]
+for e in L:
+    print(e)
+# USANDO O WILE
+
+L = [8, 9, 15]
+x = 0
+while x < len(L):
+    e = L[x]
+    print(e)
+    x += 1
+ """
+L = [7, 9, 10, 12]
+p = int(input('Digite um numero a pesquisar: '))
+for e in L:
+    if e == p:
+        print('Elemento encontrado!')
+        break
+else:
+    print('Elemento nao encontrado!')
+
+
+# RANGE
+
+for v in range(10):
+    print(v)
+
+for v in range(5, 20): #começa a partir do 5
+    print(v)
+    
+# RANGE
+for t in range(3, 33, 3): #imprinindo sequencia de 3 em 3 até chegar o final do range
+    print(t, end='')
+    print()
+
+# transnformação de range em lista
+
+L = list(range(100, 1100, 50))
+print(L)
+
+
+# ENUMERATE
+L = [5, 9, 13]
+x = 0
+for e in L:
+    print(f'[{x}] {e}')
+    x += 1
+
+L = [5, 9, 13]
+for x, e in enumerate(L):
+    print(f'[{x}] {e}')
+
+
+# verificação do maior valor
+
+L = [1, 7, 2, 4]
+maximo = L[0]
+for e in L:
+    if e > maximo:
+        maximo = e
+print(maximo)
+
+
+# PROGRMA DE COPIA DE ELEMENTOS PARA OUTRAS LISTAS
+
+V = [9, 8, 7, 12, 0, 13, 21]
+P = []
+I = []
+for e in V:
+    if e % 2 == 0:
+        P.append(e)
+    else:
+        I.append(e)
+print('pares', P)
+print('impares', I)
+
+# PROGRMA DE CONTROLE DA UTILIZAÇÃO DE SALAS DE UM CINEMA
+lugares_vagos = [10, 2, 1, 3, 0]
+while True:
+    sala = int(input('Sala (0 sai): '))
+    if sala == 0:
+        print('Fim')
+        break
+    if sala > len(lugares_vagos) or sala < 1:
+        print('Sala invalida!')
+    elif lugares_vagos[sala - 1] == 0:
+        print('Desculpe Sala Lotada!')
+    else:
+        lugares = int(
+            input(f'Quantos Lugares voce deseja ({lugares_vagos[sala - 1]}) vagos: '))
+        if lugares > lugares_vagos[sala - 1]:
+            print('Esse numero de lugares nao esta disponivel.')
+        elif lugares < 0:
+            print('Numero invalido!')
+        else:
+            lugares_vagos[sala - 1] -= lugares
+            print(f'{lugares} lugares vendidos')
+print('Utilização das salas')
+for x, l in enumerate(lugares_vagos):
+    print(f'Sala {x + 1} - {l} lugar(es) vazio(s)')
+
+# LISTAS COM STRINGS
+
+# PROGRAMA QUE LE E IMPRIME UMA LISTA DE COMPRAS
+compras = []
+while True:
+    produto = input('Produto: ')
+    if produto == 'fim':
+        break
+    compras.append(produto)
+for p in compras:
+    print(p)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
