@@ -697,8 +697,69 @@ for p in compras:
 
 
 
+# LISTAS DENTRO DE LISTAS
+# PROGRMA 6.15 - IMPRESSAO DE UMA LISTA DE STRINGS, LETRA A LETRA
 
+L = ['MAÇÃS', 'PERAS', 'KIWIS']
+for s in L:
+    for letra in s:
+        print(letra)
 
+# PROGRAMA LISTAS DE LISTAS
+produto1 = ['macã', 10, 0.30]
+produto2 = ['pera', 5, 0.75]
+produto3 = ['kwi', 4, 0.98]
+compras = [produto1, produto2, produto3]
+print(compras)
+
+# IMPRESSAO DE COMPRAS
+produto1 = ['macã', 10, 0.30]
+produto2 = ['pera', 5, 0.75]
+produto3 = ['kwi', 4, 0.98]
+compras = [produto1, produto2, produto3]
+for e in compras:
+    print(f'Produto: {e[0]}')
+    print(f'Quantidade: {e[1]}')
+    print(f'Preço: {e[2]:5.2f}')
+
+compras = []
+while True:
+    produto = input('Produto: ')
+    if produto == 'fim':
+        break
+    quantidade = int(input('Quantidade: '))
+    preco = float(input('Preço: '))
+    compras.append([produto, quantidade, preco])
+soma = 0.0
+for e in compras:
+    print(f'{e[0]:20s} x {e[1]:5d} {e[2]:5.2f} {e[1] * e[2]:6.2f}')
+    soma += e[1] * e[2]
+print(f'Total: {soma:7.2f}')
+
+# PROGRAMA 6.20 ORDENAÇÃO PELO METODO DE BOLHAS
+
+L = [7, 4, 3, 12, 8]
+fim = 5
+while fim > 1:
+    trocou = False
+    x = 0
+    while x < (fim - 1):
+        if L[x] > L[x + 1]:
+            trocou = True
+            temp = L[x]
+            L[x] = L[x + 1]
+            L[x + 1] = temp
+        x += 1
+    if not trocou:
+        break
+    fim -= 1
+for e in L:
+    print(e)
+
+# ORDENANDO A MESMA LISTA COM O METODO SORT()
+
+L = [7, 4, 3, 12, 8]
+print(L.sort())
 
 
 
